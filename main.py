@@ -9,7 +9,8 @@ longi = response1.json()["iss_position"]["longitude"]
 # Parameters for the second API request
 parameters = {
     "lat": lati,
-    "lng": longi
+    "lng": longi,
+    "formatted": 0
 }
 
 # Fetch sunrise and sunset times using the latitude and longitude
@@ -19,4 +20,4 @@ sunrise = response2.json()["results"]["sunrise"]
 sunset = response2.json()["results"]["sunset"]
 
 # Print the results
-print(f"Sunrise: {sunrise}\nSunset: {sunset}")
+print(f"Sunrise: {sunrise.split('T')}\nSunset: {sunset.split('T')}")
